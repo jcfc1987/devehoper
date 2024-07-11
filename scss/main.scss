@@ -1,0 +1,206 @@
+@keyframes grow-animation {
+    0% {
+      font-size: 12px;
+      color: #212529;
+    }
+    50% {
+      font-size: 16px;
+      color: blue;
+    }
+    100% {
+      font-size: 14px;
+      color: red;
+    }
+}
+
+@keyframes fill {
+    0% {
+        top:0px;
+        left: 0px;
+    }
+    50% {
+        top:10px;
+        left: 10px;
+    }
+    100% {
+        top:20px;
+        left: 20px;
+    }
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    .service-title{
+        color: #0b5be0;
+        font-size: 18px;
+    }
+    header{
+        font-weight: 300;
+        #contact-header {
+            position:relative;
+            background-color: #0b5be0;
+            z-index: 100;
+            padding: 5px;
+            color: white;
+            .navbar-toggler {
+                margin-bottom: 5px;
+                .navbar-toggler-icon {
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 255)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+                }
+            }
+            .row{
+                padding: 10px 15px;
+            }
+            ul{
+                height: 100%;
+                background-color: #0b5be0;
+                li {
+                    min-width: 50px;
+                    padding: 10px;
+                    display: inline;
+                    list-style: none;
+                    border-radius: 5px;
+                    i {
+                        color: white;
+                        font-size: 22px;
+                    }
+                    .social-icons:hover{
+                        color: #212529;
+                    }
+                }
+                // li:hover {
+                //     background-color: #ff0763;
+                //     cursor: pointer;
+                //     animation: grow-animation 1.0s ease forwards;
+                // }
+            }
+        }
+    }
+    #header{
+        position: fixed;
+        width: 100%;
+        padding: 10px;
+        z-index: 10;
+        background-color: white;
+        color:black;
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        a {
+            color:#212529;
+            font-weight: 500;
+            font-style: normal;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        a:hover {
+            color:#0b5be0;
+        }
+        .container {
+            ul {
+                li {
+                    display: inline;
+                    list-style: none;
+                    padding-right: 10px;
+                }
+                // .active-page {
+                //     color: #0b5be0;
+                // }
+                // .header-page {
+                //     margin: auto;
+                // }
+                // .header-page:hover{
+                //     color: #0b5be0;
+                // }
+            }
+        }
+    }
+    main{
+        padding-top: 120px;
+        background-color: #FFFFFF;
+        #homeCarousel{
+            margin: 10px;
+            color: #212529 !important;
+            .carousel-control-prev,
+            .carousel-control-next {
+                margin: auto 20px auto 20px;
+                width: 50px;
+                height: 50px;
+                background-color: #0b5be0;
+                border-radius: 5px;
+            }
+            .carousel-indicators{
+                margin: auto;
+                width: 200px;
+                background-color: #0b5be0;
+                border-radius: 15px;
+                margin-bottom: 15px !important;
+            }
+            .carousel-inner{
+                .carousel-image {
+                    padding-top: 250px;
+                    width: 100%;
+                    height: 720px;
+                }
+            }
+        }
+        #about {
+            padding:200px 5px 5px 5px;
+            .about-item-wrapper {
+                position: relative;
+                width: 250px;
+                height: 250px;
+                background-color: #0b5be0;
+                margin-left: 50px;
+                margin-top: 50px;
+                padding: 10px;
+                .about-item-container {
+                    position: absolute;
+                    border: 3px solid #0b5be0;
+                    top: 20px;
+                    left: 20px;
+                    width: 100%;
+                    height: 100%;
+                    padding:10px;
+                    background-color: white;
+                    //animation: fill 0.5s linear both;
+                }
+                .about-item-container:hover {
+                    animation: fill 0.5s linear both;
+                }
+            }
+            // .about-item-container:nth-child(1) {
+                
+            // }
+            // .about-item-container:nth-child(2) {
+            //     background-color: red;
+            // }
+            // .about-item-container:nth-child(3) {
+            //     background-color: #0b5be0;
+            // }
+        }
+        #services {
+            padding:200px 5px 5px 5px;
+        }
+        #portfolio {
+            padding:50px 5px;
+        }
+    }
+    footer{
+        padding: 10px;
+        color: white;
+        background-color: #212529;
+        ul{
+            margin: 0px;
+            li {
+                list-style: none;
+                display: inline;
+                list-style: none;
+            }
+        }
+    }
+}
