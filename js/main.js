@@ -15,7 +15,7 @@ var devehoper = {
 };
 
 
-var request =  (config) => {
+const request =  (config) => {
     if(typeof(config.url) !== "undefined") {
         $.ajax({
             method: typeof(config.method) == "undefined" || config.method.toUpperCase() == "GET" ? "GET" : "POST",
@@ -36,13 +36,19 @@ var request =  (config) => {
     }
 }
 
-var translate = () => {
-    for(let key in TRANSLATIONS.pt) {
-        devehoper.ln === "pt" ? $("." + key).text(TRANSLATIONS.pt[key]) : $("." + key).text(TRANSLATIONS.en[key]);
+const translate = (containerSelector, value) => {
+    if(typeof(containerSelector) === "string") {
+        $(containerSelector).html(value);
+    } else if(containerSelector instanceof Array) {
+
+    } else {
+        for(let key in TRANSLATIONS.pt) {
+            devehoper.ln === "pt" ? $("." + key).text(TRANSLATIONS.pt[key]) : $("." + key).text(TRANSLATIONS.en[key]);
+        }
     }
 }
 
-var headerScroll = () => {
+const headerScroll = () => {
     $(window).scroll(function() {
         if(window.scrollY < 100) {
             $("#header").css({"top":"100px"});
@@ -92,9 +98,10 @@ var headerScroll = () => {
 //end facebook
 
 
-var init = () => {
+const init = () => {
     if(browserData == null) {
         devehoper.ln = navigator.language == "pt-PT" ? "pt" : "en";
+        localStorage.setItem("devehoper", JSON.stringify({"ln": devehoper.ln}));
     } else {
         devehoper.ln = browserData.ln;
     }
@@ -133,8 +140,81 @@ var init = () => {
 //End Facebook
 }
 
+//begin distance calculation (meant for delivery service)
+function haversineDistance(lat1, lon1, lat2, lon2) {
+    // Convert degrees to radians
+    function toRadians(degrees) {
+        return degrees * (Math.PI / 180);
+    }
+
+    // Coordinates in radians
+    const lat1Rad = toRadians(lat1);
+    const lon1Rad = toRadians(lon1);
+    const lat2Rad = toRadians(lat2);
+    const lon2Rad = toRadians(lon2);
+
+    // Differences
+    const deltaLat = lat2Rad - lat1Rad;
+    const deltaLon = lon2Rad - lon1Rad;
+
+    // Haversine formula
+    const a = Math.sin(deltaLat / 2) ** 2 + Math.cos(lat1Rad) * Math.cos(lat2Rad) * Math.sin(deltaLon / 2) ** 2;
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    // Earth's radius in kilometers
+    const R = 6371;
+
+    // Distance in kilometers
+    const distance = R * c;
+    
+    return distance;
+}
+
+const myPromise = (action, executeAfter) => {
+    return new Promise((resolve, reject) => {
+        action();
+    }).then(finalResult => {
+        resolve(executeAfter(finalResult));
+    })
+    .catch(error => {
+        reject(error);
+    });
+}
+
+const lazzyLoading = (pageName, containerId) => {
+    if($("#"+containerId).html().length == 0) {
+        $("#"+containerId).load("pages/"+pageName + ".html", () => {
+            $("#webdev_description").html(TRANSLATIONS[devehoper.ln]["ln_web_description"]);
+        });
+    }
+};
+// Example usage
+// const lat1 = 32.6632065;
+// const lon1 = -16.9022512;
+// const lat2 = 32.6655351;
+// const lon2 = -16.9226249;
+
+// const distance = haversineDistance(lat1, lon1, lat2, lon2);
+// console.log(`The distance between the two locations is ${distance.toFixed(2)} kilometers.`);
+
+
+//end distance calculation
+
+
+  
+//   myPromise
+//     .then(handleFulfilledA, handleRejectedA)
+//     .then(handleFulfilledB, handleRejectedB)
+//     .then(handleFulfilledC, handleRejectedC);
+  
+
 (() => {
     $( document ).ready(function() {
         init();
+        // Loading services description pages
+        $("#btn_webdev").on('click', (event) => {
+            event.preventDefault();
+            lazzyLoading("service_description", "webdev_container");
+        });
     });
 })();
