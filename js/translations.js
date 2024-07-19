@@ -11,7 +11,19 @@ const TRANSLATIONS = {
         "ln_computer_repair": "Reparação de computadores",
         "ln_budget_service": "Por favor contacte-nos para um serviço de orçamento gratuito á medida do que necessita.",
         "ln_budget": "Orçamentos",
-        "ln_web_description": "Nós desenvolvemos de acordo com as suas necessidades, entre em contato conosco para que possamos transmitir-lhe as informações que precisa e um orçamento gratuito."
+        "ln_web_description": "Nós desenvolvemos de acordo com as suas necessidades, entre em contato conosco para que possamos transmitir-lhe as informações que precisa e um orçamento gratuito.",
+        "ln_web_description_layout": "Layout",
+        "ln_web_description_user_management": "Gestão de utilizadores (registo, login, recuperação de conta, editar conta, eliminar conta)",
+        "ln_web_description_translations": "Traduções de conteúdo",
+        "ln_web_description_item_management": "Gestão de artigos",
+        "ln_web_description_newsletter": "Boletim de noticias (newsletter)",
+        "ln_web_description_custom_functionalities": "Funcionalidades de acordo com as suas necessidades",
+        "ln_web_description_logs": "Registo de eventos",
+        "ln_web_domain": "Dominio para o site",
+        "ln_web_static_server": "Servidor para website estático",
+        "ln_web_dynamic_server": "Servidor para website dinâmico",
+        "ln_web_maintenance": "Manutenção do website"
+
     },
     "en": {
         "ln_home" : "Home",
@@ -25,6 +37,17 @@ const TRANSLATIONS = {
         "ln_computer_repair": "Computer Repair",
         "ln_budget_service": "Please contact us for a free budget service according to what you need.",
         "ln_budget": "Budgets",
-        "ln_web_description": "We develop according to your needs, contact us so we can provide you with information and free budget."
+        "ln_web_description": "We develop according to your needs, contact us so we can provide you with information and free budget.",
+        "ln_web_description_layout": "Layout",
+        "ln_web_description_user_management": "User management (registration, login, account recovery, edit account, delete account)",
+        "ln_web_description_translations": "Content translations",
+        "ln_web_description_item_management": "Itens management",
+        "ln_web_description_newsletter": "Newsletter",
+        "ln_web_description_custom_functionalities": "Custom funcionalidades according to your needs",
+        "ln_web_description_logs": "Event log",
+        "ln_web_domain": "Domain",
+        "ln_web_static_server": "Static website server",
+        "ln_web_dynamic_server": "Dynamic website server",
+        "ln_web_maintenance": "Website maintenance"
     }
 };

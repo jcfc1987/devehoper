@@ -40,7 +40,7 @@ const translate = (containerSelector, value) => {
     if(typeof(containerSelector) === "string") {
         $(containerSelector).html(value);
     } else if(containerSelector instanceof Array) {
-
+//@todo
     } else {
         for(let key in TRANSLATIONS.pt) {
             devehoper.ln === "pt" ? $("." + key).text(TRANSLATIONS.pt[key]) : $("." + key).text(TRANSLATIONS.en[key]);
@@ -181,11 +181,11 @@ const myPromise = (action, executeAfter) => {
     });
 }
 
-const lazzyLoading = (pageName, containerId) => {
-    if($("#"+containerId).html().length == 0) {
-        $("#"+containerId).load("pages/"+pageName + ".html", () => {
-            $("#webdev_description").html(TRANSLATIONS[devehoper.ln]["ln_web_description"]);
-        });
+const lazzyLoading = (pageName, containerSelector, callback) => {
+    if($(containerSelector).html().length == 0) {
+        $(containerSelector).load("pages/"+pageName + ".html", (response, status, xhr) => {
+            xhr.done(callback());
+        })
     }
 };
 // Example usage
@@ -214,7 +214,31 @@ const lazzyLoading = (pageName, containerId) => {
         // Loading services description pages
         $("#btn_webdev").on('click', (event) => {
             event.preventDefault();
-            lazzyLoading("service_description", "webdev_container");
+            lazzyLoading("service_description", "#webdev_container",
+            () => {
+                translate("#webdev_description", TRANSLATIONS[devehoper.ln]["ln_web_description"]);
+                translate(".ln_web_description_layout", TRANSLATIONS[devehoper.ln]["ln_web_description_layout"]);
+                translate(".ln_web_description_user_management", TRANSLATIONS[devehoper.ln]["ln_web_description_user_management"]);
+                translate(".ln_web_description_translations", TRANSLATIONS[devehoper.ln]["ln_web_description_translations"]);
+                translate(".ln_web_description_item_management", TRANSLATIONS[devehoper.ln]["ln_web_description_item_management"]);
+                translate(".ln_web_description_newsletter", TRANSLATIONS[devehoper.ln]["ln_web_description_newsletter"]);
+                translate(".ln_web_description_custom_functionalities", TRANSLATIONS[devehoper.ln]["ln_web_description_custom_functionalities"]);
+                translate(".ln_web_description_logs", TRANSLATIONS[devehoper.ln]["ln_web_description_logs"]);
+                translate(".ln_web_domain", TRANSLATIONS[devehoper.ln]["ln_web_domain"]);
+                translate(".ln_web_static_server", TRANSLATIONS[devehoper.ln]["ln_web_static_server"]);
+                translate(".ln_web_dynamic_server", TRANSLATIONS[devehoper.ln]["ln_web_dynamic_server"]);
+                translate(".ln_web_maintenance", TRANSLATIONS[devehoper.ln]["ln_web_maintenance"]);
+
+                const triggerTabList = document.querySelectorAll('#myTab button');
+                triggerTabList.forEach(triggerEl => {
+                    const tabTrigger = new bootstrap.Tab(triggerEl);
+                    triggerEl.addEventListener('click', event => {
+                        event.preventDefault();
+                        tabTrigger.show();
+                    });
+                });
+
+            });
         });
     });
 })();
