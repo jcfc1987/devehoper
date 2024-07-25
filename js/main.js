@@ -240,5 +240,34 @@ const lazzyLoading = (pageName, containerSelector, callback) => {
 
             });
         });
+
+        $("#btn_software_dev").on('click', (event) => {
+            event.preventDefault();
+            lazzyLoading("software_development_description", "#software_dev_container",
+            () => {
+                translate("#webdev_description", TRANSLATIONS[devehoper.ln]["ln_web_description"]);
+                translate(".ln_software_description_layout", TRANSLATIONS[devehoper.ln]["ln_web_description_layout"]);
+                translate(".ln_software_description_user_management", TRANSLATIONS[devehoper.ln]["ln_web_description_user_management"]);
+                translate(".ln_software_description_translations", TRANSLATIONS[devehoper.ln]["ln_web_description_translations"]);
+                translate(".ln_software_description_item_management", TRANSLATIONS[devehoper.ln]["ln_web_description_item_management"]);
+                translate(".ln_software_description_newsletter", TRANSLATIONS[devehoper.ln]["ln_web_description_newsletter"]);
+                translate(".ln_software_description_custom_functionalities", TRANSLATIONS[devehoper.ln]["ln_web_description_custom_functionalities"]);
+                translate(".ln_software_description_logs", TRANSLATIONS[devehoper.ln]["ln_web_description_logs"]);
+                translate(".ln_software_domain", TRANSLATIONS[devehoper.ln]["ln_web_domain"]);
+                translate(".ln_software_static_server", TRANSLATIONS[devehoper.ln]["ln_web_static_server"]);
+                translate(".ln_software_dynamic_server", TRANSLATIONS[devehoper.ln]["ln_web_dynamic_server"]);
+                translate(".ln_software_maintenance", TRANSLATIONS[devehoper.ln]["ln_web_maintenance"]);
+
+                const triggerTabList = document.querySelectorAll('#softwareTab button');
+                triggerTabList.forEach(triggerEl => {
+                    const tabTrigger = new bootstrap.Tab(triggerEl);
+                    triggerEl.addEventListener('click', event => {
+                        event.preventDefault();
+                        tabTrigger.show();
+                    });
+                });
+
+            });
+        });
     });
 })();

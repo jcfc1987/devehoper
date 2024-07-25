@@ -91,14 +91,14 @@
             </ul> <!-- /lc_nav_menu --> 
           </div>
           <form role="search" method="get" id="searchform" action="/" class="d-flex ms-auto justify-content-center">
-            <div class="input-group">
+            <!-- <div class="input-group">
               <input type="text" value="" name="s" id="s" class="form-control" placeholder="Search..." aria-label="Search">
               <span class="input-group-text" id="basic-addon2">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="text-dark" width="1rem" height="1rem" viewBox="0 0 24 24" style="" lc-helper="svg-icon" fill="currentColor">
                   <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path>
                 </svg>
               </span>
-            </div>
+            </div> -->
 
           </form>
         </div>
@@ -123,15 +123,15 @@
 
     <div id="homeCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
-        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1" aria-current="true"></button>
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active"></button>
         <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
         <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Slide 4" class=""></button>
         <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4" aria-label="Slide 5" class=""></button>
         <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="5" aria-label="Slide 5" class=""></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item">
           <svg class="bd-placeholder-img" width="100%" height="833px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="833px" fill="#212529"></rect></svg>
           <div class="container">
             <div class="carousel-caption text-center">
@@ -142,7 +142,7 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item active">
           <svg class="bd-placeholder-img" width="100%" height="833px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="833px" fill="#212529"></rect></svg>
           <div class="container">
             <div class="carousel-caption text-center">
@@ -220,38 +220,51 @@
           We are a passionate team of IT dedicated to technologies.
           Why Choose Us?
         </div>
-       </div>
-       <div class="row">
-        <div class="col-md-12 col-lg-6 col-xl-12 about-item-wrapper">
-          <div class="about-item-container">
-            Expertise<br>
-              Our team brings years of experience in software development.
-          </div>
-          
-        </div>
-        <div class="col-md-12 col-lg-6 col-xl-12 about-item-wrapper">
-          <div class="about-item-container">
-            Innovation<br>
-              We stay ahead of the curve, embracing cutting-edge technologies.
-          </div>
-          
-        </div>
-        <div class="col-md-12 col-lg-6 col-xl-12 about-item-wrapper">
-          <div class="about-item-container">
-            Client-Centric<br>
-              Your success is our priority. We listen, adapt, and deliver.
-          </div>
-          
-        </div>
-        <div class="col-md-12 col-lg-6 col-xl-3 about-item-wrapper">
-          <div class="about-item-container">
-              Values<br>
-              We believe in respect, trust, comunication, hardwork, which guide everything we do.
-          </div>
-          
-        </div>
-       </div>
       </div>
+        <div class="row about-row-item-wrapper">
+
+          <div class="col-md-6 about-item-wrapper">
+            <div class="about-item-container">
+              <div class="about-item-container-element">
+                Expertise<br>
+                  <span class="ln_about_expertise"></span>
+              </div>
+            </div>
+          </div>
+
+      
+          <div class="col-md-6 about-item-wrapper">
+            <div class="about-item-container">
+              <div class="about-item-container-element">
+                Innovation<br>
+                  <span class="ln_about_innovation"></span>
+              </div>
+            </div>
+          </div>
+
+      
+          <div class="col-md-6 about-item-wrapper">
+            <div class="about-item-container">
+              <div class="about-item-container-element">
+                Client-Centric<br>
+                  <span class="ln_about_client_centric"></span>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-6 about-item-wrapper">
+            <div class="about-item-container">
+              <div class="about-item-container-element">
+                Values<br>
+                <span class="ln_about_values"></span>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
 
     <div class="container" id="services">
             <div class="row">
@@ -286,7 +299,7 @@
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingOne">
                           <button id="btn_webdev" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#webdev" aria-expanded="false" aria-controls="webdev">
-                            Website development
+                            <span class="ln_website_development"></span>
                           </button>
                         </h2>
                         <div id="webdev" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -295,12 +308,12 @@
                       </div>
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingTwo">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Aplicações hibridas (Android, Windows, Linux)
+                          <button id="btn_software_dev" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <span class="ln_software_platforms"></span>
                           </button>
                         </h2>
                         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                          <div class="accordion-body">Conteudo para aplicações hibridas</div>
+                          <div class="accordion-body" id="software_dev_container"></div>
                         </div>
                       </div>
                     </div>
@@ -316,11 +329,14 @@
                 <div class="p-lg-5 p-12 shadow">
                   <div class="lc-block mb-12">
                     <img alt="" class="img-fluid" src="img/services/computer_repair.jpg" style="height:10vh">
-
-
                     <h4 class="my-3" editable="inline"></h4>
                     <p editable="inline"><span class="ln_computer_repair"></span></p>
-
+                    <table class="table table-hover">
+                      <tr><td class="ln_repair_format"></td></tr>
+                      <tr><td class="ln_repair_virus_removal"></td></tr>
+                      <tr><td class="ln_repair_hardware_maintenance"></td></tr>
+                      <tr><td class="ln_repair_network_configuration"></td></tr>
+                    </table>
 
                     <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
                   </div><!-- /lc-block -->
@@ -335,7 +351,9 @@
 
                     <h4 class="my-3" editable="inline"></h4>
                     <p editable="inline">3D Printing&nbsp;</p>
-
+                    <table class="table table-hover">
+                      <tr><td class="ln_3d_object"></td></tr>
+                    </table>
                     <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
                   </div><!-- /lc-block -->
                 </div>
@@ -349,6 +367,9 @@
 
                     <h4 class="my-3" editable="inline"></h4>
                     <p editable="inline">IOT.&nbsp;</p>
+                    <table class="table table-hover">
+                      <tr><td class="ln_iot"></td></tr>
+                    </table>
 
                     <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
                   </div><!-- /lc-block -->
@@ -361,6 +382,12 @@
 
                     <h4 class="my-3" editable="inline"></h4>
                     <p editable="inline">Consulting&nbsp;</p>
+                    <table class="table table-hover">
+                      <tr><td class="ln_consulting_s1"></td></tr>
+                      <tr><td class="ln_consulting_s2"></td></tr>
+                      <tr><td class="ln_consulting_s3"></td></tr>
+                      <tr><td class="ln_consulting_s4"></td></tr>
+                    </table>
 
                     <!-- <a class="btn btn-outline-primary" href="#" role="button">Read more</a> -->
                   </div><!-- /lc-block -->

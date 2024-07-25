@@ -192,44 +192,42 @@ body {
             }
         }
         #about {
-            padding:200px 5px 5px 5px;
-            .about-item-wrapper {
-                position: relative;
-                width: 250px;
-                height: 250px;
-                background-color: #0b5be0;
-                margin-left: 50px;
-                margin-top: 50px;
-                padding: 10px;
-                .about-item-container {
-                    position: absolute;
-                    border: 3px solid #0b5be0;
-                    top: 20px;
-                    left: 20px;
+            padding:250px 5px 5px 5px;
+            .about-row-item-wrapper{
+                display: flex;
+                .about-item-wrapper {
+                    position: relative;
                     width: 250px;
                     height: 250px;
-                    padding:10px;
-                    //background-color: white;
-                    background: linear-gradient(to right, #ffffff, #e4dede);
-                    display: flex; // make us of Flexbox
-                    align-items: center; // does vertically center the desired content
-                    justify-content: center; // horizontally centers single line items
-                    text-align: center;
-                    //animation: fill 0.5s linear both;
+                    background-color: #0b5be0;
+                    margin-left: 50px;
+                    margin-top: 50px;
+                    padding: 10px;
+                    .about-item-container {
+                        position: absolute;
+                        border: 3px solid #0b5be0;
+                        top: 20px;
+                        left: 20px;
+                        width: 250px;
+                        height: 250px;
+                        padding:10px;
+                        //background-color: white;
+                        background: linear-gradient(to right, #ffffff, #e4dede);
+                        display: flex;
+                        align-items: center; /* Vertical alignment */
+                        justify-content: center;
+                        text-align: center;
+                        //animation: fill 0.5s linear both;
+                    }
+                    .about-item-container:hover {
+                        animation: fill 0.5s linear both;
+                    }
                 }
-                .about-item-container:hover {
-                    animation: fill 0.5s linear both;
-                }
+                // .about-item-wrapper:nth-child(even) {
+                //     display: block;
+                // }
             }
-            // .about-item-container:nth-child(1) {
-                
-            // }
-            // .about-item-container:nth-child(2) {
-            //     background-color: red;
-            // }
-            // .about-item-container:nth-child(3) {
-            //     background-color: #0b5be0;
-            // }
+            
         }
         #services {
             padding:200px 5px 5px 5px;

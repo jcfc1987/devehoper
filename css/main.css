@@ -154,9 +154,12 @@ body main #homeCarousel .carousel-inner .carousel-caption .carousel-image6 {
   height: 833px;
 }
 body main #about {
-  padding: 200px 5px 5px 5px;
+  padding: 250px 5px 5px 5px;
 }
-body main #about .about-item-wrapper {
+body main #about .about-row-item-wrapper {
+  display: flex;
+}
+body main #about .about-row-item-wrapper .about-item-wrapper {
   position: relative;
   width: 250px;
   height: 250px;
@@ -165,7 +168,7 @@ body main #about .about-item-wrapper {
   margin-top: 50px;
   padding: 10px;
 }
-body main #about .about-item-wrapper .about-item-container {
+body main #about .about-row-item-wrapper .about-item-wrapper .about-item-container {
   position: absolute;
   border: 3px solid #0b5be0;
   top: 20px;
@@ -175,11 +178,11 @@ body main #about .about-item-wrapper .about-item-container {
   padding: 10px;
   background: linear-gradient(to right, #ffffff, #e4dede);
   display: flex;
-  align-items: center;
+  align-items: center; /* Vertical alignment */
   justify-content: center;
   text-align: center;
 }
-body main #about .about-item-wrapper .about-item-container:hover {
+body main #about .about-row-item-wrapper .about-item-wrapper .about-item-container:hover {
   animation: fill 0.5s linear both;
 }
 body main #services {
