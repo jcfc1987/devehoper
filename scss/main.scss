@@ -43,9 +43,7 @@ body {
             background-color: #0b5be0;
             z-index: 100;
             padding: 5px;
-            height: 100px;
             color: white;
-            vertical-align: middle;
             .navbar-toggler {
                 margin-bottom: 5px;
                 .navbar-toggler-icon {
@@ -126,7 +124,10 @@ body {
         background-color: #FFFFFF;
         #homeCarousel{
             //margin: 10px;
-            color: #212529 !important;
+            color: #212529;
+            .carousel-inner{
+                color: black;
+            }
             .carousel-control-prev,
             .carousel-control-next {
                 margin: auto 20px auto 20px;
@@ -140,7 +141,7 @@ body {
                 width: 200px;
                 background-color: #0b5be0;
                 border-radius: 15px;
-                margin-bottom: 15px !important;
+                margin-bottom: 15px;
             }
             .carousel-inner{
                 .carousel-caption {
@@ -192,7 +193,7 @@ body {
             }
         }
         #about {
-            padding:250px 5px 5px 5px;
+            padding:15px 5px 5px 5px;
             .about-row-item-wrapper{
                 display: flex;
                 .about-item-wrapper {
@@ -206,6 +207,7 @@ body {
                     .about-item-container {
                         position: absolute;
                         border: 3px solid #0b5be0;
+                        color: #212529;
                         top: 20px;
                         left: 20px;
                         width: 250px;
@@ -230,7 +232,7 @@ body {
             
         }
         #services {
-            padding:200px 5px 5px 5px;
+            padding:15px 5px 5px 5px;
         }
         #portfolio {
             padding:50px 5px;
