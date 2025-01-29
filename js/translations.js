@@ -82,3 +82,12 @@ const TRANSLATIONS = {
         "ln_consulting_s5": "Counseling about any other technologie solution",
     }
 };
+
+function translate(language) {
+    $('[data-translate]').each(function () {
+        const key = $(this).data('translate');
+        $(this).text(translations[language][key]);
+    });
+}
+
+export { translate };
