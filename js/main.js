@@ -1,9 +1,7 @@
 //moqup reference: 
 //https://demo.templatemonster.com/demo/122125.html?_gl=1*1vkskkd*_ga*MTI5NDcyNDAyMS4xNzE4MTk3OTYx*_ga_FTPYEGT5LY*MTcxODE5Nzk2MC4xLjAuMTcxODE5Nzk4OC4zOC4wLjA.
-
-var browserData = JSON.parse(localStorage.getItem("devehoper"));
 var devehoper = {
-    "ln": "pt",
+    "ln": "pt", //browserData["devehoper"] == null || browserData["devehoper"]["ln"] == null ? navigator.language =="PT-pt" || navigator.language == "PT-br",
     "projects": [],
     "services": {
         "id": "1"
@@ -13,6 +11,10 @@ var devehoper = {
         "software": "link to software"
     }
 };
+
+var browserData = JSON.parse(localStorage.getItem("devehoper"));
+browserData["devehoper"] == null ? browserData = devehoper: null;
+
 
 
 const request =  (config) => {
